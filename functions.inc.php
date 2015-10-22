@@ -34,7 +34,7 @@ function tweet($messageToSend) {
 			$twitterEndpoint = 'https://api.twitter.com/1.1/';
 	
 			$message = "Now playing: ".$messageToSend;
-			logEntry("TWEET.PHP Message:".$message);
+			logEntry(" Message:".$message);
 	
 			$url = $twitterEndpoint.'/statuses/update.json';
 			$requestMethod = 'POST';
@@ -43,7 +43,7 @@ function tweet($messageToSend) {
 			$twitter = new TwitterAPIExchange($twitterSettings);
 			//echo $twitter->buildOauth($url, $requestMethod)->setPostfields($postfields)->performRequest();
 			$tweetResult = $twitter->buildOauth($url, $requestMethod)->setPostfields($postfields)->performRequest();
-			logEntry("TWEET.PHP TweetResult: ".$tweetResult);
+			logEntry("TweetResult: ".$tweetResult);
 }
 
 function hex_dump($data, $newline="\n")
@@ -110,7 +110,7 @@ function processCallback($argv) {
 
 	global $DEBUG,$pluginName, $settings, $pluginSettings;
 	
-	$SEPARATOR = $pluginSettings['SEPARATOR'];
+	$SEPARATOR = urldecode($pluginSettings['SEPARATOR']);
 
 	if($DEBUG)
 		print_r($argv);

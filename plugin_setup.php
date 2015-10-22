@@ -52,7 +52,7 @@ if(isset($_POST['submit']))
 	$ENABLED = $pluginSettings['ENABLED'];
 	
 	//$SEPARATOR = urldecode(ReadSettingFromFile("SEPARATOR",$pluginName));
-	$SEPARATOR = $pluginSettings['SEPARATOR'];
+	$SEPARATOR = urldecode($pluginSettings['SEPARATOR']);
 	
 	//$USER = urldecode(ReadSettingFromFile("USER",$pluginName));
 	$USER = $pluginSettings['USER'];
@@ -171,9 +171,13 @@ echo "<p/> \n";
 	
 	echo "<input type=\"text\" name=\"consumer_secret\" size=\"64\" value=\"".$CONSUMER_SECRET."\"> \n";
 	
+	?>
+	<p/>
+	Separator between SongTitle & Song Artist:
+	<input type="text" value="<? if($SEPARATOR !="" ) { echo $SEPARATOR; } else { echo "-";}?>" name="SEPARATOR" id="SEPARATOR"></input>
 	
 
-?>
+
 <p/>
 <input id="submit_button" name="submit" type="submit" class="buttons" value="Save Config">
 
@@ -186,7 +190,7 @@ echo "<p/> \n";
 ?>
 </form>
 
-<p>To report a bug, please file it against the sms Control plugin project on Git: https://github.com/LightsOnHudson/FPP-Plugin-Twitter
+<p>To report a bug, please file it against the sms Control plugin project on Git: https://github.com/LightsOnHudson/FPP-Plugin-Tweeter
 
 </fieldset>
 </div>
