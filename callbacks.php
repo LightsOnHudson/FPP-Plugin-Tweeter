@@ -27,10 +27,10 @@ if (file_exists($pluginConfigFile))
 	$pluginSettings = parse_ini_file($pluginConfigFile);
 
 
-$ENABLED = $pluginSettings['ENABLED'];
+$ENABLED = urldecode($pluginSettings['ENABLED']);
 
 
-if($ENABLED != "on" && $ENABLED != "1") {
+if($ENABLED != "ON" && $ENABLED != "1") {
 	logEntry("Plugin Status: DISABLED Please enable in Plugin Setup to use & Restart FPPD Daemon");
 	
 	exit(0);
