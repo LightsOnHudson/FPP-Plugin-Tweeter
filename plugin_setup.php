@@ -5,8 +5,11 @@
 include_once "/opt/fpp/www/common.php";
 include_once 'functions.inc.php';
 include_once 'commonFunctions.inc.php';
-$pluginVersion ="2.8";
+$pluginVersion ="1.1";
 $myPid = getmypid();
+
+
+//1.1 - Dec 7 2016 - posted on GitHub to moondawg - unique time or twitter will reject it
 
 $gitURL = "https://github.com/LightsOnHudson/FPP-Plugin-Tweeter.git";
 
