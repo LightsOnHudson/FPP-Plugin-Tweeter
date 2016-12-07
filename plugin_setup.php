@@ -5,7 +5,7 @@
 include_once "/opt/fpp/www/common.php";
 include_once 'functions.inc.php';
 include_once 'commonFunctions.inc.php';
-
+$pluginVersion ="2.8";
 $myPid = getmypid();
 
 $gitURL = "https://github.com/LightsOnHudson/FPP-Plugin-Tweeter.git";
@@ -97,7 +97,7 @@ if(isset($_POST['submit']))
 
 <div id="<?echo $pluginName;?>" class="settings">
 <fieldset>
-<legend><?php echo $pluginName;?> Support Instructions</legend>
+<legend><?php echo $pluginName." Version: ".$pluginVersion;?> Support Instructions</legend>
 
 <p>Known Issues:
 <ul>

@@ -33,7 +33,7 @@ function tweet($messageToSend) {
 			);
 			$twitterEndpoint = 'https://api.twitter.com/1.1/';
 	
-			$message = "Now playing: ".$messageToSend;
+			$message = "Now Playing at ".date('M jS, g:ia',time()).": ".$messageToSend;
 			logEntry(" Message:".$message);
 	
 			$url = $twitterEndpoint.'/statuses/update.json';
